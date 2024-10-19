@@ -46,8 +46,27 @@ Welcome to my Assembly Language Tutorials! This repository is designed for begin
 9.  [Calculating The Length of String During Runtime](notes/009-Calc_Len_of_String_During_Runtime.md)
     - Source Code
     - Explanation
+10. [Virtual Memory in Assembly: Understanding Stack, Heap, and Segments](notes/010-Virtual_Memory_in_Assembly.md)
+    - Introduction to Virtual Memory
+    - Segments of Virtual Memory
+    - Stack
+    - Heap
+11. [Macros in NASM](notes/011-Macros-in-nasm.md)
+    - What are macros?
+    - How to define a macro?
+    - Local Labels in a macro definition
+    - Defining constants using `equ`
+    - Including external files using `%include`
+12. [Subroutine to Print an Integer](notes/012-Subroutine_to_print_int.md)
+    - Source code
+    - Overview of the logic used
+    - Explanation of the source code
+13. [Command Line Arguments](notes/013-CLI_arguments.md)
+    - What are command line arguments (CLI arguments)
+    - Arguments on the stack
+    - Program to print CLI arguments onto the screen.
 
-## Overview
+## Overviewn
 This tutorial series covers fundamental concepts in assembly programming, including:
 - Basic computer architecture.
 - The assembly language syntax and conventions.

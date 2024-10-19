@@ -166,9 +166,6 @@ Running this executable file `hello` would print "Hello, World" onto the screen.
 ## Hello World In Assembly But With Labels
 Before we start working with labels, we need to go over `jmp` instruction in asm
 - `jmp` Instruction in assembly is a **control flow** instruction used to make unconditional jump to another part of the program. It alters the flow of execution by directly changing the **Instruction Pointer** `RIP`
-- By convention:
-  - labels would be prefixed with `_`
-  - sub-labels would be prefixed with `.`
 ```asm
     section .data
         msg db 'Hello, World', 0
@@ -177,17 +174,17 @@ Before we start working with labels, we need to go over `jmp` instruction in asm
         global _start
 
     _start:
-        jmp _printHelloWorld    ; jumping to _printHelloWorld label
+        jmp printHelloWorld    ; jumping to _printHelloWorld label
         jmp _exit               ; jumping to _exit label
 
-    _printHelloWorld:
+    printHelloWorld:
         mov rax, 1
         mov rdi, 1
         mov rsi, msg
         mov rdx, 13
         syscall
 
-    _exit:                      ; defining _exit label
+    exit:                      ; defining _exit label
         mov rax, 60
         xor rdi, rdi
         syscall

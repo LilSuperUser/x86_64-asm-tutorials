@@ -13,7 +13,7 @@ In this tutorial, we will calculate the length of a given string during run time
 
     _start:
         mov     rsi, msg        ; loading effective address of msg into rsi
-        call    _getLen         ; calling the function _getLen
+        call    getLen         ; calling the function _getLen
 
         mov     rax, 1          ; loading 1 (syscall number for sys_write) into rax
         mov     rdi, 1          ; loading 1 (file descriptor for stdout) into rdi
@@ -25,7 +25,7 @@ In this tutorial, we will calculate the length of a given string during run time
         xor     rdi, rdi        ; loading 0 (exit code) into rsi
         syscall                 ; invoking the syscall
 
-    _getLen:
+    getLen:
         xor rcx, rcx            ; initializing rcx with 0
         .loopForLen:
             mov     al, [rsi + rcx] ; loading the value of [rsi + rcx] into first 8 bits of RAX
@@ -48,7 +48,7 @@ What we have to cover is the part which calculates the length of the string duri
     mov     rsi, msg
     call    _getLen
 
-    _getLen:
+    getLen:
         .loopForLen:
             mov     al, [rsi + rcx]
             cmp     al, 0

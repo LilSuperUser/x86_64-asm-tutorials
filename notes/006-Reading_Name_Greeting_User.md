@@ -16,13 +16,13 @@ In this tutorial, we will learn how to:
         global  _start          ; making the _start label global
 
     _start:                     ; start of the global label
-        call    _putPrompt      ; calling function _putPrompt
-        call    _readName       ; calling function _readName
-        call    _putGreeting    ; calling function _putGreet
-        call    _putName        ; caling function _putName
-        jmp     _exit           ; jumping to label _exit
+        call    putPrompt      ; calling function _putPrompt
+        call    readName       ; calling function _readName
+        call    putGreeting    ; calling function _putGreet
+        call    putName        ; caling function _putName
+        jmp     exit           ; jumping to label _exit
 
-    _putPrompt:                 ; start of _putPrompt function
+    putPrompt:                 ; start of _putPrompt function
         mov     rax, 1          ; load syscall number for sys_write (1) into rax
         mov     rdi, 1          ; load file descriptor for stdout (1) into rdi
         mov     rsi, prompt     ; load pointer to source buffer to write from, into rsi
@@ -30,7 +30,7 @@ In this tutorial, we will learn how to:
         syscall                 ; invoking the syscall
         ret                     ; popping stack back into RIP
 
-    _readName:                  ; start of _readName function
+    readName:                  ; start of _readName function
         mov     rax, 0          ; load syscall number for sys_read (0) into rax
         mov     rdi, 0          ; load file descriptor for stdin (0) into rdi
         mov     rsi, name       ; load pointer to memory buffer where the input will be stored, into rsi
@@ -38,7 +38,7 @@ In this tutorial, we will learn how to:
         syscall                 ; invoking the syscall
         ret                     ; popping stack back into RIP
 
-    _putGreeting:               ; start of _putGreet function
+    putGreeting:               ; start of _putGreet function
         mov     rax, 1          ; load syscall number for sys_write (1) into rax
         mov     rdi, 1          ; load file descriptor for stdout (1) into rdi
         mov     rsi, greeting   ; load pointer to source buffer to write from, into rsi
@@ -46,7 +46,7 @@ In this tutorial, we will learn how to:
         syscall                 ; invoking the syscall
         ret                     ; popping stack back into RIP
 
-    _putName:                   ; start of _putName function
+    putName:                   ; start of _putName function
         mov     rax, 1          ; load syscall number for sys_write (1) into rax
         mov     rdi, 1          ; load file descriptor for stdout (1) into rdi
         mov     rsi, name       ; load pointer to source buffer to write from, into rsi
@@ -54,7 +54,7 @@ In this tutorial, we will learn how to:
         syscall                 ; invoking the syscall
         ret                     ; popping stack back into RIP
 
-    _exit:                      ; start of _exit label
+    exit:                      ; start of _exit label
         mov     rax, 60         ; load syscall number for sys_ext (60) into rax
         xor     rdi, rdi        ; load 0 into rdi
         syscall                 ; invoking the syscall

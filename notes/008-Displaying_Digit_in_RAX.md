@@ -10,10 +10,10 @@ In this tutorial we will learn how to print a signle digit onto the screen. Befo
 
     _start:                         ; start of the global _start label
         mov     rax, 5              ; loading the value 5 into rax
-        call    _printRAXDigit      ; calling the function _printRAXDigit
-        jmp     _exit               ; Jumping to _exit label
+        call    printRAXDigit      ; calling the function _printRAXDigit
+        jmp     exit               ; Jumping to _exit label
 
-    _printRAXDigit:
+    printRAXDigit:
         add     rax, 48             ; incrementing the value of rax register by 48
         mov     [digit], al         ; loading value of al (8 bit version of RAX) into [digit]
 
@@ -24,7 +24,7 @@ In this tutorial we will learn how to print a signle digit onto the screen. Befo
         syscall                     ; invoking the syscall
         ret                         ; popping stack back into RIP
 
-    _exit:                          ; start of the 
+    exit:                          ; start of the 
         mov     rax, 60             ; loading 60 (syscall number for sys_exit) into rax
         xor     rdi, rdi            ; loading 0 (exit code) into rdi
         syscall                     ; invoking the syscall
