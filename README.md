@@ -43,9 +43,9 @@ Welcome to my Assembly Language Tutorials! This repository is designed for begin
 8. [Displaying A Digit in RAX](notes/008-Displaying_Digit_in_RAX.md)
    - Source Code
    - Explanation
-9.  [Calculating The Length of String During Runtime](notes/009-Calc_Len_of_String_During_Runtime.md)
-    - Source Code
-    - Explanation
+9. [Calculating The Length of String During Runtime](notes/009-Calc_Len_of_String_During_Runtime.md)
+   - Source Code
+   - Explanation
 10. [Virtual Memory in Assembly: Understanding Stack, Heap, and Segments](notes/010-Virtual_Memory_in_Assembly.md)
     - Introduction to Virtual Memory
     - Segments of Virtual Memory
@@ -65,9 +65,13 @@ Welcome to my Assembly Language Tutorials! This repository is designed for begin
     - What are command line arguments (CLI arguments)
     - Arguments on the stack
     - Program to print CLI arguments onto the screen.
+14. [Introduction to files](notes/014-Introduction_to_files.md)
+    - Introduction to files
+    - File permissions
+    - File descriptors
 
-## Overviewn
-This tutorial series covers fundamental concepts in assembly programming, including:
+## Overview 
+this tutorial series covers fundamental concepts in assembly programming, including:
 - Basic computer architecture.
 - The assembly language syntax and conventions.
 - System calls.
