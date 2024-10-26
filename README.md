@@ -69,7 +69,13 @@ Welcome to my Assembly Language Tutorials! This repository is designed for begin
     - Introduction to files
     - File permissions
     - File descriptors
-
+15. [Opening & closing a file](notes/015-Opening_&_closing_a_file.md)
+    - Opening a file using `sys_open` system call
+    - Flags used while opening a file
+    - Modes used while opening a file
+    - Combining multiple flags and modes
+    - Closing a file using `sys_close` sysem call
+    - Example of opening and closing a file
 ## Overview 
 this tutorial series covers fundamental concepts in assembly programming, including:
 - Basic computer architecture.
