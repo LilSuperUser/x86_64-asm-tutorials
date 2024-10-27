@@ -76,6 +76,12 @@ Welcome to my Assembly Language Tutorials! This repository is designed for begin
     - Combining multiple flags and modes
     - Closing a file using `sys_close` sysem call
     - Example of opening and closing a file
+16. [Writing to an open file](notes/016-Writing_to_files.md)
+    - `sys_write` system call breakdown
+    - Example of writing to a file
+17. [Reading from an open file](notes/017-Reading_from_files.md)
+    - `sys_read` system call breakdown
+    - Example of reading from a file
 ## Overview 
 this tutorial series covers fundamental concepts in assembly programming, including:
 - Basic computer architecture.
