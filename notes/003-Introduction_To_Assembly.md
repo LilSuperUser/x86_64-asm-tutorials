@@ -63,25 +63,25 @@ There registers are classified into these (64 bit version):
 
 Each of these registers (64 bit version) are made up of their smaller versions (8 bits, 16 bits and 32 bits) with their own names and sizes.
 These are:
-s. No|64 bit machine |32 bit machine |16 bit machine |8 bit machine|
------|---------------|---------------|---------------|-------------|
-1    | RAX           | EAX           | AX            | AL          |
-2    | RBX           | EBX           | BX            | BL          |
-3    | RCX           | ECX           | CX            | CL          |
-4    | RDX           | EDX           | DX            | DL          |
-5    | RDI           | ESI           | SI            | SIL         |
-6    | RSI           | EDI           | DI            | DIL         |
-7    | RBP           | EBP           | BP            | BPL         |
-8    | RSP           | ESP           | SP            | SPL         |
-9    | R8            | R8D           | R8W           | R8B         |
-10   | R9            | R9D           | R9W           | R9B         |
-11   | R10           | R10D          | R10W          | R10B        |
-12   | R11           | R11D          | R11W          | R11B        |
-13   | R12           | R12D          | R12W          | R12B        |
-14   | R13           | R13D          | R13W          | R13B        |
-15   | R14           | R14D          | R14W          | R14B        |
-16   | R15           | R15D          | R15W          | R15B        |
-17   | RIP           | EIP           | IP            | (Varies)    |
+ s. No | 64 bit machine | 32 bit machine | 16 bit machine | 8 bit machine 
+ ----- | -------------- | -------------- | -------------- | ------------- 
+ 1     | RAX            | EAX            | AX             | AL            
+ 2     | RBX            | EBX            | BX             | BL            
+ 3     | RCX            | ECX            | CX             | CL            
+ 4     | RDX            | EDX            | DX             | DL            
+ 5     | RDI            | EDI            | DI             | DIL           
+ 6     | RSI            | ESI            | SI             | SIL           
+ 7     | RBP            | EBP            | BP             | BPL           
+ 8     | RSP            | ESP            | SP             | SPL           
+ 9     | R8             | R8D            | R8W            | R8B           
+ 10    | R9             | R9D            | R9W            | R9B           
+ 11    | R10            | R10D           | R10W           | R10B          
+ 12    | R11            | R11D           | R11W           | R11B          
+ 13    | R12            | R12D           | R12W           | R12B          
+ 14    | R13            | R13D           | R13W           | R13B          
+ 15    | R14            | R14D           | R14W           | R14B          
+ 16    | R15            | R15D           | R15W           | R15B          
+ 17    | RIP            | EIP            | IP             | (Varies)      
 
 ![alt text](../media/SizeComparisonRegister.png)
 
@@ -125,17 +125,17 @@ Immediate values are of four types:
         mov rax, 0200           ; still decimal
         mov rax, 0200d          ; explicitly decimal
         mov rax, 0d200          ; explicitly decimal
-
+    
         mov rax, 0c8h           ; hex
         mov rax, 0hc8           ; still hex
         mov rax, $0c8           ; still hex: 0 is req
         mov rax, 0xc8           ; hex again
-
+    
         mov rax, 310q           ; octal
         mov rax, 0q310          ; octal again
         mov rax, 310o           ; octal again
         mov rax, 0o310          ; octal yet again
-
+    
         mov rax, 11001000b      ; binary
         mov rax, 0b11001000     ; binary again
         mov rax, 11001000y      ; binary yet again
