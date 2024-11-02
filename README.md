@@ -82,6 +82,8 @@ Welcome to my Assembly Language Tutorials! This repository is designed for begin
 17. [Reading from an open file](notes/017-Reading_from_files.md)
     - `sys_read` system call breakdown
     - Example of reading from a file
+18. [Appending to a file](./notes/018-Appending_to_files.md)
+    - Example of appending to a file
 ## Overview 
 this tutorial series covers fundamental concepts in assembly programming, including:
 - Basic computer architecture.
