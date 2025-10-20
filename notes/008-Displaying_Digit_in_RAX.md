@@ -2,7 +2,7 @@
 In this tutorial we will learn how to print a signle digit onto the screen. Before we dive into this tutorial it is necessary that you have a proper understanding about `ASCII` as well as an [ASCII table](https://www.asciitable.com/) to refer to.
 
 ```asm
-    setion .data
+    section .data
         digit   db 0, 10            ; defining an array of two bytes, each byte with 0 and 10 respectively
 
     section .text
@@ -15,7 +15,7 @@ In this tutorial we will learn how to print a signle digit onto the screen. Befo
 
     printRAXDigit:
         add     rax, 48             ; incrementing the value of rax register by 48
-        mov     [digit], al         ; loading value of al (8 bit version of RAX) into [digit]
+        mov     [rel digit], al         ; loading value of al (8 bit version of RAX) into [digit]
 
         mov     rax, 1              ; loading 1 (syscall number for sys_write) into rax
         mov     rdi, 1              ; loading 1 (file descriptor for stdout) into rax
