@@ -2,7 +2,7 @@
 In this tutorial we will learn how to print a signle digit onto the screen. Before we dive into this tutorial it is necessary that you have a proper understanding about `ASCII` as well as an [ASCII table](https://www.asciitable.com/) to refer to.
 
 ```asm
-    setion .data
+    section .data
         digit   db 0, 10            ; defining an array of two bytes, each byte with 0 and 10 respectively
 
     section .text
