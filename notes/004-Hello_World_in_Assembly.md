@@ -21,7 +21,7 @@ Throughout your journey with x86_64 assembly, you would need to refer to [Linux 
 ## Hello World In Assembly (NASM) - x86_64 Linux
 ```asm
     section .data
-        msg db 'Hello, World`, 0      ; Define a null-terminated string where each char takes one B
+        msg db 'Hello, World', 0      ; Define a null-terminated string where each char takes one B
 
     section .text
         global _start
