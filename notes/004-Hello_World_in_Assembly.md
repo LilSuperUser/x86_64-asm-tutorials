@@ -1,6 +1,6 @@
 # Hello World In X86_64 Assembly (ASM)
 Before we start writing our `Hello World` program in asm, we need to look at system calls in linux.
-Assembly program often uses system calls to interact witht he OS. System calls are how we communicate with the kernel to perform tasks like writing to a file, reading input from user, or even exitting the program.
+Assembly program often uses system calls to interact with he OS. System calls are how we communicate with the kernel to perform tasks like writing to a file, reading input from user, or even exiting the program.
 
 ## Linux x86_64 Syscall Structure
 | Instruction       | Syscall #     | Return value  | arg0  | arg1  | arg2 | arg3 | arg4 | arg5 |
@@ -11,7 +11,7 @@ Assembly program often uses system calls to interact witht he OS. System calls a
 - `RAX` - To store system call number and return value (if any).
 - `RDI` - To store 0th argument to pass while **invoking a syscall**.
 - `RSI` - To store 1st argument to pass while **invoking a syscall**.
-- `RDX` - To store 2dn argument to pass while **invoking a syscall**.
+- `RDX` - To store 2nd argument to pass while **invoking a syscall**.
 - `R10` - To store 3rd argument to pass while **invoking a syscall**.
 - `R8`  - To store 4th argument to pass while **invoking a syscall**.
 - `R9`  - To store 5th argument to pass while **invoking a syscall**.
@@ -59,9 +59,9 @@ Throughout your journey with x86_64 assembly, you would need to refer to [Linux 
 
 5. `_start:` - Definition of the `_start:` label.
    - A `label` defines a location in the code and are used to name specific points in the code.
-   - The label itself **doesnt' execute anything** but the code following the label does.
+   - The label itself **doesn't execute anything** but the code following the label does.
    - Labels helps to jump to a block of code after certain conditions or just reference that block of code.
-   - Any code palced **directly after the label, with indentation**, is associated with that label.
+   - Any code placed **directly after the label, with indentation**, is associated with that label.
    - Code that is not **indented** or that **has another label**, marks the beginning of a new block of code.
 
 6. `mov rax, 1` - Moves value 1 (system call number for `sys_write`) into rax register.
@@ -100,11 +100,11 @@ Running this executable file `hello` would print "Hello, World" onto the screen.
 
 ## Data Definition Directives
 
-### To Allocate Memroy And Initialize It With Some Data (In Data Section)
+### To Allocate Memory And Initialize It With Some Data (In Data Section)
 1. `db` (Define Byte):
    - Used to define 1 Byte (8 bits) of data in memory.
    - Example:
-    ```asm 
+    ```asm
     my_byte db 0x41
      ```
 2. `dw` (Define Word):
@@ -146,7 +146,7 @@ Running this executable file `hello` would print "Hello, World" onto the screen.
     buffer resw 5       ; reserves 2 * 5 Bytes for a buffer
     ```
 3. `resd` (Reserves Double Word):
-   - Used to reservse 4 Bytes (32 bits) per entry in memory, without initializing it.
+   - Used to reserves 4 Bytes (32 bits) per entry in memory, without initializing it.
    - Example:
     ```asm
     buffer resd 5       ; reserves 4 * 5 Bytes for a buffer
@@ -167,25 +167,25 @@ Running this executable file `hello` would print "Hello, World" onto the screen.
 Before we start working with labels, we need to go over `jmp` instruction in asm
 - `jmp` Instruction in assembly is a **control flow** instruction used to make unconditional jump to another part of the program. It alters the flow of execution by directly changing the **Instruction Pointer** `RIP`
 ```asm
-    section .data
-        msg db 'Hello, World', 0
+section .data
+    msg db 'Hello, World', 0
 
-    section .text
-        global _start
+section .text
+    global _start
 
-    _start:
-        jmp printHelloWorld    ; jumping to _printHelloWorld label
-        jmp _exit               ; jumping to _exit label
+_start:
+    jmp printHelloWorld     ; jumping to _printHelloWorld label
+    jmp _exit               ; jumping to _exit label
 
-    printHelloWorld:
-        mov rax, 1
-        mov rdi, 1
-        mov rsi, msg
-        mov rdx, 13
-        syscall
+printHelloWorld:
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, msg
+    mov rdx, 13
+    syscall
 
-    exit:                      ; defining _exit label
-        mov rax, 60
-        xor rdi, rdi
-        syscall
+_exit:                      ; defining _exit label
+    mov rax, 60
+    xor rdi, rdi
+    syscall
 ```

@@ -9,7 +9,7 @@ Welcome to my Assembly Language Tutorials! This repository is designed for begin
    - Endianness
    - Memory Hierarchy
    - Instruction Set Architecture (ISA)
-   - Interrupts And Exceptionss
+   - Interrupts And Exceptions
 2. [Settign Up The Environment](notes/002-Setting_Up_Environment.md)
    - Installing NASM (assembler)
    - Installing ld (linker)
@@ -74,7 +74,7 @@ Welcome to my Assembly Language Tutorials! This repository is designed for begin
     - Flags used while opening a file
     - Modes used while opening a file
     - Combining multiple flags and modes
-    - Closing a file using `sys_close` sysem call
+    - Closing a file using `sys_close` system call
     - Example of opening and closing a file
 16. [Writing to an open file](notes/016-Writing_to_files.md)
     - `sys_write` system call breakdown
@@ -84,7 +84,7 @@ Welcome to my Assembly Language Tutorials! This repository is designed for begin
     - Example of reading from a file
 18. [Appending to a file](./notes/018-Appending_to_files.md)
     - Example of appending to a file
-## Overview 
+## Overview
 this tutorial series covers fundamental concepts in assembly programming, including:
 - Basic computer architecture.
 - The assembly language syntax and conventions.

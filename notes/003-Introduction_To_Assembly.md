@@ -63,25 +63,25 @@ There registers are classified into these (64 bit version):
 
 Each of these registers (64 bit version) are made up of their smaller versions (8 bits, 16 bits and 32 bits) with their own names and sizes.
 These are:
- s. No | 64 bit machine | 32 bit machine | 16 bit machine | 8 bit machine 
- ----- | -------------- | -------------- | -------------- | ------------- 
- 1     | RAX            | EAX            | AX             | AL            
- 2     | RBX            | EBX            | BX             | BL            
- 3     | RCX            | ECX            | CX             | CL            
- 4     | RDX            | EDX            | DX             | DL            
- 5     | RDI            | EDI            | DI             | DIL           
- 6     | RSI            | ESI            | SI             | SIL           
- 7     | RBP            | EBP            | BP             | BPL           
- 8     | RSP            | ESP            | SP             | SPL           
- 9     | R8             | R8D            | R8W            | R8B           
- 10    | R9             | R9D            | R9W            | R9B           
- 11    | R10            | R10D           | R10W           | R10B          
- 12    | R11            | R11D           | R11W           | R11B          
- 13    | R12            | R12D           | R12W           | R12B          
- 14    | R13            | R13D           | R13W           | R13B          
- 15    | R14            | R14D           | R14W           | R14B          
- 16    | R15            | R15D           | R15W           | R15B          
- 17    | RIP            | EIP            | IP             | (Varies)      
+ s. No | 64 bit machine | 32 bit machine | 16 bit machine | 8 bit machine
+ ----- | -------------- | -------------- | -------------- | -------------
+ 1     | RAX            | EAX            | AX             | AL
+ 2     | RBX            | EBX            | BX             | BL
+ 3     | RCX            | ECX            | CX             | CL
+ 4     | RDX            | EDX            | DX             | DL
+ 5     | RDI            | EDI            | DI             | DIL
+ 6     | RSI            | ESI            | SI             | SIL
+ 7     | RBP            | EBP            | BP             | BPL
+ 8     | RSP            | ESP            | SP             | SPL
+ 9     | R8             | R8D            | R8W            | R8B
+ 10    | R9             | R9D            | R9W            | R9B
+ 11    | R10            | R10D           | R10W           | R10B
+ 12    | R11            | R11D           | R11W           | R11B
+ 13    | R12            | R12D           | R12W           | R12B
+ 14    | R13            | R13D           | R13W           | R13B
+ 15    | R14            | R14D           | R14W           | R14B
+ 16    | R15            | R15D           | R15W           | R15B
+ 17    | RIP            | EIP            | IP             | (Varies)
 
 ![alt text](../media/SizeComparisonRegister.png)
 
@@ -89,7 +89,7 @@ Size comparison of a register
 
 ### Overview Of 64 Bit Registers (Holds True For Their Smaller Versions)
 
-#### **Generral-Purpose Registers(GPRs)**:
+#### **General-Purpose Registers(GPRs)**:
 1. `RAX`: **Accumulator register** (used in arithmetic operations and function return values).
 2. `RBX`: **Base register** (sometimes used to hold data or memory addresses).
 3. `RCX`: **Counter register** (often used for loops and shifts).
@@ -125,17 +125,17 @@ Immediate values are of four types:
         mov rax, 0200           ; still decimal
         mov rax, 0200d          ; explicitly decimal
         mov rax, 0d200          ; explicitly decimal
-    
+
         mov rax, 0c8h           ; hex
         mov rax, 0hc8           ; still hex
         mov rax, $0c8           ; still hex: 0 is req
         mov rax, 0xc8           ; hex again
-    
+
         mov rax, 310q           ; octal
         mov rax, 0q310          ; octal again
         mov rax, 310o           ; octal again
         mov rax, 0o310          ; octal yet again
-    
+
         mov rax, 11001000b      ; binary
         mov rax, 0b11001000     ; binary again
         mov rax, 11001000y      ; binary yet again
@@ -182,7 +182,7 @@ Intel syntax is widely used in **x86** and **x86_64** programming. It is conside
     ```
 
 ### 6.2 **AT&T Syntax**
-AT&T syntax is often used in **Unix/Linux environments**, especailly with tools like `GAS(GNU Assembler)`. It differs significantly from Intel syntax in terms of the order of operands and other conventions.
+AT&T syntax is often used in **Unix/Linux environments**, especially with tools like `GAS(GNU Assembler)`. It differs significantly from Intel syntax in terms of the order of operands and other conventions.
 ### Key Characteristics:
 - **Operand Order**: The source comes before destination operand (i.e `MOV source, destination`).
 - **Changes In Instructions**: Instructions such as `mov` are explicitly told to move how many Bytes or bits.
@@ -208,12 +208,12 @@ AT&T syntax is often used in **Unix/Linux environments**, especailly with tools 
 |Immediate values   |No prefix              |Prefixed with `$`                 |
 |Instruction size   |Implied (eg `mov`)     |Explicit (eg `movq` for 64 bit)   |
 
-### 6.3 Switchting Between Syntaxes In Assemblers
+### 6.3 Switching Between Syntaxes In Assemblers
 You might come across a situation where you have to switch between Intel and AT&T syntax depending on the assembler or dev env that you are using.
 #### 6.3.1 Using NASM:
-**NASM** defaults to `Intel syntax`. It doesn't directly support `AT&T syntax`, so you'll have to stick with intel syntax while woking with NASM.
+**NASM** defaults to `Intel syntax`. It doesn't directly support `AT&T syntax`, so you'll have to stick with intel syntax while working with NASM.
 #### 6.3.2 Using GAS (GNU Assembler):
-**GAS** defaults to `AT&T syntax`, but you can easiy switch to `Intel Syntax` using specific assembler options. To use `Intel syntax` in GAS, you can add `.intel_syntax` directive in your code or pass the `-masm=intel` flag while assembling.
+**GAS** defaults to `AT&T syntax`, but you can easily switch to `Intel Syntax` using specific assembler options. To use `Intel syntax` in GAS, you can add `.intel_syntax` directive in your code or pass the `-masm=intel` flag while assembling.
 
 ### 6.4 Switching In GDB (GNU Debugger):
 You can switch the assembly syntax displayed in `GDB (GNU Debugger)` between Intel and AT&T. The default syntax is AT&T.
