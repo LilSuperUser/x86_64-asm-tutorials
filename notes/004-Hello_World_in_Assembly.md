@@ -1,6 +1,6 @@
 # Hello World In X86_64 Assembly (ASM)
 Before we start writing our `Hello World` program in asm, we need to look at system calls in linux.
-Assembly program often uses system calls to interact with he OS. System calls are how we communicate with the kernel to perform tasks like writing to a file, reading input from user, or even exiting the program.
+Assembly program often uses system calls to interact with the OS. System calls are how we communicate with the kernel to perform tasks like writing to a file, reading input from user, or even exiting the program.
 
 ## Linux x86_64 Syscall Structure
 | Instruction       | Syscall #     | Return value  | arg0  | arg1  | arg2 | arg3 | arg4 | arg5 |
@@ -36,7 +36,7 @@ Throughout your journey with x86_64 assembly, you would need to refer to [Linux 
 
         ; to exit the program
         mov rax, 60     ; syscall number for sys_exit (60)
-        xor rdi, rdi    ; exit code 0. could have wrote "mov rdi, 0"
+        xor rdi, rdi    ; exit code 0. could have written "mov rdi, 0"
         syscall         ; invoking the syscall
 
         ; clearly we don't have any bss section
@@ -82,6 +82,16 @@ Throughout your journey with x86_64 assembly, you would need to refer to [Linux 
 
 12. `xor rdi, rdi` - Moves value (xor of value in rdi with that same value i.e. 0 `exit code`) into rdi register.
     - alternative is: `mov rdi, 0`
+   
+    - Optional information about 'mov rdi, 0' and 'xor rdi, rdi':
+      
+          the difference between 'mov rdi, 0' and 'xor rdi, rdi' is 'mov rdi, 0' stores a bigger value (64bit)
+            and 'xor rdi, rdi' stores a shorter instruction (less binary size)
+              example 'mov rdi, 0' bytes:
+                                  '48 C7 C7 00 00 00 00'
+                example 'xor rdi, rdi' bytes:
+                                  '48 31 FF'
+                in general x86, xor rdi, rdi is preferred.
 
 13. `syscall` - This invokes the system call, with arguments given by us to certain register(s).
 
