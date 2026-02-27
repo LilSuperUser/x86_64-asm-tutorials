@@ -91,7 +91,7 @@ Throughout your journey with x86_64 assembly, you would need to refer to [Linux 
                                   '48 C7 C7 00 00 00 00'
                 example 'xor rdi, rdi' bytes:
                                   '48 31 FF'
-                in general x86, xor rdi, rdi is preferred.
+                in general x86, 'xor rdi, rdi' is preferred.
 
 13. `syscall` - This invokes the system call, with arguments given by us to certain register(s).
 
