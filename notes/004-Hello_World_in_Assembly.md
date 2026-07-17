@@ -185,7 +185,6 @@ section .text
 
 _start:
     jmp printHelloWorld     ; jumping to _printHelloWorld label
-    jmp _exit               ; jumping to _exit label
 
 printHelloWorld:
     mov rax, 1
@@ -193,7 +192,7 @@ printHelloWorld:
     mov rsi, msg
     mov rdx, 13
     syscall
-
+                            ; Instruction Pointer(RIP) moves to the next section(_exit label)
 _exit:                      ; defining _exit label
     mov rax, 60
     xor rdi, rdi
