@@ -153,6 +153,6 @@ printRAX:
 21. `jmp .done` Once value in r15 < base address of reserved memory, jump to `.done` label.
     - When that happens, it means we have printed all the value we stored in the reserved memory.
 
-22. `.done:` Defines a label to which we jump after printing all the values we stored in buffer(reserved memory).
+22. `.done:` Defines a label to which we jump after printing all the values we stored in buffer (reserved memory).
     - Prints the new line char using `sys_write` syscall.
-    - Pop the stack back into RIP to continute the execution.
+    - Pop the stack back into RIP to continue the execution.

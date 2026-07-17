@@ -19,7 +19,7 @@ This section consists of initialized data or constants that is stored some where
 ```asm
 section .data
     msg db "Hello, world", 0xA      ; defines a string "hello, world\n" where each char takes one B in memory
-                                    ; NOTE: comments in asm are written after semicolon(;) symbol
+                                    ; NOTE: comments in asm are written after semicolon (;) symbol
                                     ; There are already two comments written above.
                                     ; It is of course not necessary to write comments or ;
 ```
@@ -89,7 +89,7 @@ Size comparison of a register
 
 ### Overview Of 64 Bit Registers (Holds True For Their Smaller Versions)
 
-#### **General-Purpose Registers(GPRs)**:
+#### **General-Purpose Registers (GPRs)**:
 1. `RAX`: **Accumulator register** (used in arithmetic operations and function return values).
 2. `RBX`: **Base register** (sometimes used to hold data or memory addresses).
 3. `RCX`: **Counter register** (often used for loops and shifts).
@@ -140,11 +140,11 @@ Immediate values are of four types:
         mov rax, 0b11001000     ; binary again
         mov rax, 11001000y      ; binary yet again
         mov rax, 0y11001000     ; binary yet again
-        mov rax, 0b1100_1000    ; above examples can have undersores too
+        mov rax, 0b1100_1000    ; above examples can have underscores too
     ```
 - Character constant
     ```asm
-        mov al, 'a'     ; moves the ASCII valeu of 'a' that is 97 (takes one B) into 8 bit version of rax register
+        mov al, 'a'     ; moves the ASCII value of 'a' that is 97 (takes one B) into 8 bit version of rax register
     ```
 - String constant
     ```asm
@@ -182,7 +182,7 @@ Intel syntax is widely used in **x86** and **x86_64** programming. It is conside
     ```
 
 ### 6.2 **AT&T Syntax**
-AT&T syntax is often used in **Unix/Linux environments**, especially with tools like `GAS(GNU Assembler)`. It differs significantly from Intel syntax in terms of the order of operands and other conventions.
+AT&T syntax is often used in **Unix/Linux environments**, especially with tools like `GAS (GNU Assembler)`. It differs significantly from Intel syntax in terms of the order of operands and other conventions.
 ### Key Characteristics:
 - **Operand Order**: The source comes before destination operand (i.e `MOV source, destination`).
 - **Changes In Instructions**: Instructions such as `mov` are explicitly told to move how many Bytes or bits.
@@ -192,7 +192,7 @@ AT&T syntax is often used in **Unix/Linux environments**, especially with tools 
   - `movq` -> move quadword or 8 Bytes (64 bits)
 - **Registers**: Register names are prefixed with `%` (eg: `%RAX`, `%RBX`).
 - **Immediate Values**: Immediate values are prefixed with `$` (eg: `$1`, `0x4c00`).
-- **Memory Access**: Memory operands are enclosed in parentheses, and the scale, index, and base addressing modes are written in a specific format(i.e `(%RAX)`).
+- **Memory Access**: Memory operands are enclosed in parentheses, and the scale, index, and base addressing modes are written in a specific format (i.e `(%RAX)`).
     ```asm
         movq    %rax, %rbx      ; move the value of rax into rbx (movq for move quadword)
         movq    $5, %rax        ; move the value 5 into rax (movq for move quadword)

@@ -31,7 +31,7 @@ Throughout your journey with x86_64 assembly, you would need to refer to [Linux 
         mov rax, 1      ; syscall number for sys_write (1)
         mov rdi, 1      ; file descriptor 1 for stdout
         mov rsi, msg    ; address of the string to output
-        mov rdx, 13     ; length of the string(13 char) Number of bytes to output from address given in rsi
+        mov rdx, 13     ; length of the string (13 char) Number of bytes to output from address given in rsi
         syscall         ; invoking the syscall
 
         ; to exit the program
@@ -74,7 +74,7 @@ Throughout your journey with x86_64 assembly, you would need to refer to [Linux 
 8. `mov rsi, msg` - Moves the base address of the data we want to write (msg in this case) into rsi register.
 
 9. `mov rdx, 13` - Moves the value 13 (Number of Bytes we want to write from address stored in rsi) into rdx register.
-    - since we used "db", each char of the string takes one Byte. Hence, we move 13(length of the string) into rdx.
+    - since we used "db", each char of the string takes one Byte. Hence, we move 13 (length of the string) into rdx.
 
 10. `syscall` - This invokes the system call, with arguments given by us to certain register(s).
 

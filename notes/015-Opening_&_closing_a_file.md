@@ -154,7 +154,7 @@ section .text
 
 _start:
    ; setting up parameters for sys_open
-   mov rax, 2                             ; load 2(system call number for sys_open) into rax
+   mov rax, 2                             ; load 2 (system call number for sys_open) into rax
    mov rdi, filename                      ; first argument (pointer to filename)
    mov rsi, 64 | 2                        ; second argument (flag) using combinatoin of O_CREAT and O_RDWR
    mov rdx, 0o664                         ; third argument (mode) read-write for owner and group and read for others
