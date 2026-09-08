@@ -39,6 +39,62 @@ A jump transfers control form one part of a program to another. There are two pr
 |   `js`                |   -                       |   Jump if signed          |   `SF` = 1                    |
 |   `jns`               |   -                       |   Jump if not signed      |   `SF` = 0                    |
 
+Jumps can also be used as conditionals or loops. 
+A combination of conditional and unconditional jumps can be used to implement finite loops. For example:
+A simple loop that iterates 5 times:
+```asm
+.global _start
+_start:
+	xor rax, rax        ;zeroing out the rax register to be used as index of the 
+	                    ;program
+	
+loop:
+	cmp rax, 5          ;compares the value of rax with 5
+	je exit             ;if the value is 5, the program jumps to exit
+	inc rax             ;adds 1 to rax
+	jmp loop            ;jumps back to the start of the loop
+	
+exit:
+	mov rdi, 0          ;an exit status signifying success
+	mov rax, 60         ;exit syscall number
+	syscall             ;making the syscall
+``` 
+This is a simple loop that does nothing except iterate 5 times. You can add more code to make it do tasks repetitively(like printing hello world from the previous lesson multiple times on the screen).
+
+Conditional jumps can be used to implement the control flow in a program. Here's a simple assembly program that implements conditional control flow inside a loop and checks if a password is correct using by comparing each character:
+```asm
+.global _start
+
+;data section
+msg db "passwd",0
+
+_start:
+	xor rcx, rcx
+	mov rdi, [rsp+16]         ;loads argv[1] into rdi from the stack
+
+check:
+	mov al, [rdi+rcx]     ;puts a single byte char from the stack into al
+	cmp al, [msg+rcx]     ;compares that with one byte of the password
+	jne fail              ;if bytes/chars don't match, jumps to fail
+	
+	cmp al, 0             ;checks for null character
+	je success            ;jumps to success if string ends
+	
+	inc rcx               ;rcx+1 to move to the next char
+	jmp check             ;loop back to the start to verify the next char
+	
+success:
+	mov rdi, 0               ;an exit code 0 signifying program succeeded
+	mov rax, 60              ;syscall number or exit()
+	syscall                  ;making the syscall
+
+fail:
+	mov rdi, 1               ;an exit code 1 signifying failure
+	mov rax, 60
+	syscall
+```
+
+
 ## 3. Calls In Assembly
 ```asm
 <function name>:
